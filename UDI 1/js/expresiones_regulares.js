@@ -142,5 +142,40 @@
  console.log(regExp16.test("Esto es un parrafo.")); //TRUE
 console.log(regExp16.test("Esto es un parrafo")); //TRUE
 
+console.log("------------*-------------");
+// * => UN CARACTER QUE APARECE 0 O MAS VECES
+let regExp18 = /a*/;
+regExp18.test(""); //TRUE
+
+console.log("------------+-------------");
+// + => UN CARACTER QUE APARECE 1 O MAS VECES
+let regExp20= /a+/;
+regExp20.test("a") //TRUE
+regExp20.test("bba"); //TRUE
+
+console.log("------------?------------")
+// ? => EL CARACTER ANTERIOR PUEDE APARECER O NO
+let regExp21 = /disparos?/;
+regExp21.test("Escuché disparos en tu habitación");
+regExp21.test("Efectuó un disparo al sujeto") // TRUE
+
+console.log("------------{n-m}-----------");
+// {n} ==> EL CARACTER ANTERIOR APARECE N VECES
+// {n,} ==> EL CARACTER ANTERIOR APARECE N O MAS VECES
+//{n, m} ==> EL CARACTER ANTERIOR APARECE ENTRE N Y M VECES
+let regExp23 = /x{3}/;
+console.log(regExp23.test("holaxx x")) //FALSE
+let regExp24 = /x{3}/;
+console.log(regExp24.test("holaaxxxxxxxx xx")) //FALSE
+let regExp25 = /x{3,5}/;
+console.log(regExp25.test("holaxxxxxxx xxx")); //TRUE
+
+console.log("---------CON NUMEROS--------");
+//ENCUENTRA UN NUMERO QUE TENGA DOS CIFRAS
+let regExp26= /^[0-9]{2}$/;
+console.log(regExp26.test(225));
+let regExp27= /^[0-9]{2,4}/;
+console.log(regExp26.test(22556)); //TRUE
+
 
 }
