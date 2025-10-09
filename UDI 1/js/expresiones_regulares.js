@@ -177,5 +177,16 @@ console.log(regExp26.test(225));
 let regExp27= /^[0-9]{2,4}/;
 console.log(regExp26.test(22556)); //TRUE
 
+/**
+ * (x)
+ * (?:x)
+ * (?=y)
+ * x(?!y)
+ */
+    let str = "la ola de la playa tiene más sal que de costumbre";
+    let regExp28 = /\b[a-z]{3}\b/i;
+   console.log(regExp28.exec(str));
+    //MATCH ES DE STRING
+ console.log(str.match(regExp28));
 
 }
