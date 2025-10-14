@@ -1,12 +1,13 @@
 "use strict"
 {
     function invertirCadena(frase){
+        let cadena = new String(frase);
         let resultadoCadena = "";
-        for (let i=frase.lenght; i>0;i--){
-            resultadoCadena += frase.charAt(i);
+        for (let i=cadena.length; i>=0;i--){
+            resultadoCadena += cadena.charAt(i);
         }
         return console.log(resultadoCadena);
     }
 
-    invertirCadena("Hola Mundo");
+   invertirCadena("Hola Mundo"); 
 }
