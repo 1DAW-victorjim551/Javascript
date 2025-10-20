@@ -113,4 +113,79 @@
      myArray.sort( (a,b)=> a>b?1:-1);
       myArray.sort( (a,b)=> a-b); // >
 
+      // [] ==> OPCIONAL
+      // slice (inicio, [final]) ==> desde inicio hasta final -1
+
+      console.log("\n\SLICE:");
+      let nombres = ["Rita", "Manuel", "Miguel", "Ana", "Vanesa"];
+
+      let nombresMasculinos = nombres.slices(1,3);
+      console.log(nombresMasculinos);
+      // Te coge los ultimos dos
+      console.log(nombres.slice(-2));
+
+      // filter: crea un nuevo array con los elementos filtrados
+      console.log("\n\FILTER:");
+      let users = [
+        {name: "John", age: 34},
+        {name: "Amy", age: 20},
+        {name: "Thomas", age: 10}
+      ];
+
+      let filteredUsers = users.filter (function(user){
+        return user.age > 15;
+      });
+
+      console.log(filteredUsers);
+
+      let filteredUsers2 = users.filter((user) => user.age > 15);
+      console.log(filteredUsers2);
+
+      console.log("\n\FIND:");
+      // FIND: devuelve el 1º elemento del array que cumple la condición
+
+      let user = users.find (function (user){
+            return user.name.match(/A[a-z]*/)
+      });
+
+      console.log(user);
+
+      let user2 = users.find ((user) => user.name.match(/A[a-z])*/));
+      console.log(user2);
+
+      //Probar tamién con el flag g en la expresión regular
+
+      //SOME ==> true/false. Comprueba si al menos un elemento cumple la condición
+      
+      console.log("\n\SOME:");
+
+      let hasUser = users.some(function (user){
+        return user.age === 10;
+      });
+
+      console.log(hasUser);
+
+      let hasUser2 = users.some ((user) => user.age===10);
+      hasUser?console.log("PO ZI"):console.log("PO NO");
+      console.log(hasUser2);
+      hasUser2?console.log("PO ZI"):console.log("PO NO");
+
+      //findIndex ==> devuelve el índice del primer elemento que cumpla la condición
+      console.log("\n\FINDINDEX:");
+      let index = users.findIndex(function (user){
+        return user.age === 25;
+      });
+
+      console.log(index);
+
+      let index2 = users.findIndex ((user) => user.age === 25);
+
+      //CONCAT ==> concatena arrays
+      console.log("\n\FINDINDEX:");
+      let array1 = ["a", "b", "c"];
+      let array2 = ["d", "f", "g"];
+
+      let array3 = array1.concat(array2);
+      console.log(array3);
+      
 }
