@@ -180,12 +180,117 @@
 
       let index2 = users.findIndex ((user) => user.age === 25);
 
-      //CONCAT ==> concatena arrays
+      //CONCAT ==> concatena arrays, copiando por valor no por referencia
       console.log("\n\FINDINDEX:");
       let array1 = ["a", "b", "c"];
       let array2 = ["d", "f", "g"];
 
       let array3 = array1.concat(array2);
       console.log(array3);
-      
+
+      // REDUCE (acumulador, valorActual)
+      console.log("\n\REDUCE:");
+
+      let numbers = [1, 2, 3, 4, 5];
+
+      let sumaTotal = numbers.reduce (function(acumulador, valorActual){
+        acumulador += valorActual;
+        return acumulador;
+      }, 0); // EL 0 ES EL VALOR INICIAL DE LA VARIABLE ACUMULADOR
+
+      console.log(sumaTotal);
+
+      let sumaTotal2 = numbers.reduce((acumulador, valorActual) => acumulador+=valorActual);
+      console.log(sumaTotal2);
+
+      const miArrayNumeros = [[0,1], [2, 3], [4, 5]] // ==> 0,1,2,3,4,5
+
+     let arrayConcat = miArrayNumeros.reduce((acc, valorActual) => acc.concat(valorActual));
+     console.log(arrayConcat);
+
+     // includes () ==> true/false
+
+     const motos = ["yamaha", "ducati", "kawasaki"];
+     console,log(motos.includes("vepas")); //FALSE
+     console,log(motos.includes("ducati")); //TRUE
+     
+     // ITERAR SOBRE UN ARRAY
+
+     /**
+      * ITERAR SOBRE ARRAY:
+      * - for
+      * - forEach
+      * - map
+      * - for of
+      */
+
+     // FOR
+
+     let vector = [1, 2, "A", "F", -1, 2.4];
+     for (let i=0;i<vector.length;i++){
+      console.log(vector[i]);
+     };
+     
+     // FOR EACH
+
+     vector.forEach (function(elem){
+      console.log(elem);
+     });
+
+     vector.forEach(function(elem, index){
+      console.log("En la posición " + index + " nos encontramos el valor" + elem);
+     });
+
+     vector.forEach((elem) => console.log(elem));
+     vector.forEach((elem, index) => console.log(elem + " se encuentra en la posición " + index));
+
+     // MAP
+
+     let vector2 = vector.map(function(elem){
+      console.log(elem);
+      return elem;
+         }); 
+     console.log(vector2);
+
+     let vector3 = vector.map(elem => isNaN(elem) ? elem : elem * 2);
+     console.log(vector3);
+
+
+    //  let users = [
+    //   {name: "John", age: 34},
+    //   {name: "Amy", age: 20},
+    //   {name: "Thomas", age: 10}
+    // ];
+
+
+   let arrayAges =  users.map(user => user.age);
+   let sumaEdades = arrayAges.reduce((acumulador, valorActual) => acumulador+=valorActual, 0);
+
+   console.log(arrayAges);
+   console.log(sumaEdades);
+
+
+  // FOR OF
+
+  // SOLO PARA ARRAYS
+  for (let user of users){
+    console.log(user);
+  }
+
+  let fullUsers = users.map (user => {
+    return {
+      ...user,
+      city: "Jalisco"
+    };
+  });
+  console.log(fullUsers);
+
+  let fullUsers2= users.map  (user => {
+    return {
+      ...user,
+      age: user.age*2
+    }
+  });
+
+  console.log(fullUsers2);
 }

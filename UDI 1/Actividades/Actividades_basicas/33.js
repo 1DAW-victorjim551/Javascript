@@ -1,23 +1,18 @@
-"use strict"
+"use strict";
 {
     function esNombreValido(cadena){
-        const abecedarioRegx = /^[a-zA-Z]$/s;
+        const abecedarioRegx = /^[a-zA-Z/s]*$/;
         let esValido = false;
 
-       if(cadena.match(abecedarioRegx)){
+        console.log(cadena);
+
+        if(cadena.match(abecedarioRegx)){
             esValido = true;
-       };
+        }
 
-        //   for (let i=0;i<cadena.length;i++){
-        //     if (cadena.charAt(i).match(abecedarioRegx)){
-        //         esValido = true;
-        //     }
-        //   }
-
-           return esValido;
+        return esValido;
     }
 
-
-    let output = console.log(esNombreValido("javi"));
-
+    console.log(esNombreValido("Javier Ferrer")); // true
+    console.log(esNombreValido("Javier123"));     // false
 }
