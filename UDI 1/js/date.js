@@ -3,7 +3,7 @@
     let fecha = new Date();
     console.log(fecha);
     let fecha2 = new Date("1979/5/30 14:30:15");
-    let fecha3 = new Date(1979, 4, 30, 14, 30, 15);
+    let fecha3 = new Date(1979, 5, 30, 14, 30, 15);
     console.log(fecha3);
 
     let fecha4 = new Date (1979, 4, 30);
