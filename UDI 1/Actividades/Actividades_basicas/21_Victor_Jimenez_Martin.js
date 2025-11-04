@@ -6,8 +6,8 @@
         for (let i=cadena.length; i>=0;i--){
             resultadoCadena += cadena.charAt(i);
         }
-        return console.log(resultadoCadena);
+        return resultadoCadena;
     }
 
-   invertirCadena("Hola Mundo"); 
+   console.log(invertirCadena("Hola Mundo")); 
 }

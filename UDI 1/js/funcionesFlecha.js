@@ -37,4 +37,12 @@
     }
 
    console.log(fconvertir(10, 20));
+
+
+   let b=7;
+    let c = (b) => b*10;
+    let d = c(b);
+    console.log(d);
+    let e = c(100);
+    console.log(e);
 }
