@@ -8,8 +8,8 @@
     }
 }
 
-console.log(convertirNumero(100, 2));
-console.log(convertirNumero(4, 10));
+console.log(convertirNumero(101010, 2));
+console.log(convertirNumero(42, 10));
 
 
 }

@@ -24,5 +24,5 @@
     return edad;
   }
 
-  console.log("Tu edad es:", mostrarEdad(date));
+  console.log("Tu edad es : ", mostrarEdad(date));
 }
