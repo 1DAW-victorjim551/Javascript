@@ -19,6 +19,12 @@
          element.insertAdjacentHTML("beforeend", text);
          document.body.appendChild(element);
     })
+
+
+
+    myBtn2.addEventListener("click", function (evento){
+        element.lastChild.remove();
+    })
     
     
     
