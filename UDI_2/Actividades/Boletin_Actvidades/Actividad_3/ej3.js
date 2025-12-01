@@ -20,7 +20,7 @@
         let div = document.createElement("div");
         let input = document.createElement("input");
         input.setAttribute("type", "checkbox");
-        input.setAttribute("value", "N"+Math.floor(Math.random() * 101) + 100);
+        input.setAttribute("value", "Nº"+Math.floor((Math.random() * 101)+ 100));
         div.appendChild(input);
         let label = document.createElement("label");
         label.textContent = i;
@@ -33,7 +33,7 @@
         let miElemento = document.getElementsByTagName("input");
         for(let elem of miElemento){
             elem.checked = true;
-            console.log("Elemento marcado" + elem.value);
+            console.log("Elemento marcado " +  elem.value);
         }
         
     });
@@ -42,15 +42,29 @@
         let miElemento = document.getElementsByTagName("input");
         for(let elem of miElemento){
             elem.checked = false;
-            console.log("Elemento desmarcado" + elem.value);
+            console.log("Elemento desmarcado " + elem.value);
         }
     });
 
     btnAmpliar.addEventListener("click", function (evento){
+        let miElemento = document.getElementsByTagName("input");
 
+        for(let elem of miElemento){
+            if(elem.value.substring(2) %2 == 0){
+                elem.style.height = "60px";
+                elem.style.height = "60px";
+            }
+        }
     });
 
     btnRestaurar.addEventListener("click", function (evento){
+        let miElemento = document.getElementsByTagName("input");
 
+        for(let elem of miElemento){
+            if(elem.value.substring(2) %2 == 0){
+                elem.style.height = "20px";
+                elem.style.height = "20px";
+            }
+        }
     });
 }
