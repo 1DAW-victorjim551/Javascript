@@ -73,6 +73,55 @@
         }
     });
 
+    for(let c of myChecks){
+        c.addEventListener("change", function(e){
+            if(c.checked){
+                console.log(`Me como un ${c.value}`)
+            }else {
+                console.log(`No me como un ${c.value}`);
+            }
+        })
+    }
+
+    let seleccion = document.querySelector("#idLenguaje");
+    console.log(seleccion);
+
+    for(let o of seleccion){
+        console.log(o.value);
+        console.log(o.textContent);
+        console.log(sleeccion.options[seleccion.selectedIndex].value);
+    }
+
+    seleccion.options[seleccion.selectedIndex].value;
+    seleccion.addEventListener("change", function (e){
+        console.log(`\nEl índice seleccionado es: ${seleccion.selectedIndex}`);
+        console.log(`El valor del elemento seleccionado es: ${seleccion.options[seleccion.selectedIndex].value}`);
+        console.log(`El texto del elemento seleccionado es: ${seleccion.options[seleccion.selectedIndex].text}`);
+    });
+
+    
+// DATALIST
+console.log("\n\t7.Acceder a un datalist: ");
+let dataList = document.querySelector("#idFrutas"); //coge un List console.log(listaDatos);
+//let cajaDeEntrada document.querySelector("input[name="nFrutas"]'); let cajabetntada console.log(cajaDeEntrada);
+let cajadatos = document.querySelector("#idFrutas1");
+//Puedo recorrer los elementos option del select: ·Array.from(listaDatos.options).forEach(function (elemento){ console.log('Valor de los elementos: $(elemento.value)'); console.log("El texto elegido es: $(elemento.text)');
+
+// for (let elem of listaDatos) { // ESTO NO FUNCIONA PORQUE listaDatos NO ES ITERABLE
+//
+//
+// )
+
+for(let o of Array.from(dataList.options)){
+    console.log(o.value);
+    console.log(o.text);
+    console.log(o.selectedIndex);
+}
+
+cajaDeEntrada.addEventListener("change", function (e) {
+});
+console.log(cajaDeEntrada.value);
+//console.log(e.target.value); // es lo mismo
     
 
 
