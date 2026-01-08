@@ -24,5 +24,8 @@
             mensaje.textContent = "NO son anagramas";
         }
     })
+
+    let regExp = new RegExp(/[0-9a-zA-Z]+@[a-z0-9A-Z]+\.[a-zA-Z]{2,}/);
     
 }
+

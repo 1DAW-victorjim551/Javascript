@@ -44,4 +44,10 @@
             mensaje.style.color = "green";
         }
     });
+
+    let intervalo = setInterval(() => {
+        console.log("Hola")
+    }, 3000);
+
+    clearInterval(intervalo);
 }

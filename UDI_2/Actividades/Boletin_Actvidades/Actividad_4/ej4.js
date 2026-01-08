@@ -11,6 +11,7 @@
 
 
   let contenedor = document.createElement("div");
+  contenedor.style.border = "black 1px solid"
   document.body.appendChild(contenedor);
   let p1 = document.createElement("p");
   let p2 = document.createElement("p");

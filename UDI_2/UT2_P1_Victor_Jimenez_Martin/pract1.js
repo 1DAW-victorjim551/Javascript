@@ -23,7 +23,7 @@
       let boton = document.createElement("button");
       boton.textContent = `rgb(${r}, ${g}, ${b})`;
       boton.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      myBtn.insertAdjacentElement("beforebegin", boton);
+      myBtn.insertAdjacentElement("afterend", boton);
       
       boton.addEventListener("click", function(){
       document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;

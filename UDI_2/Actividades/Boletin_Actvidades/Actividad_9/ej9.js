@@ -2,6 +2,7 @@
 {
     let papelera = document.getElementById("papelera_vacia");
     let papel = document.getElementById("papel");
+    papel.draggable = false;
 
     papelera.addEventListener("dragover", function(e){
         e.preventDefault();
