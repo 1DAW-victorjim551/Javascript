@@ -19,9 +19,12 @@
 
     let miH2 = document.createElement("h2");
     let username = "";
-
-    if(localStorage.getItem("nombre")==="" || localStorage.getItem("nombre") === null){
-        username = localStorage.setItem("nombre", prompt("Introduce un nombre", ""));
+    console.log(localStorage.getItem("nombre"));
+    if(localStorage.getItem("nombre")==="" || localStorage.getItem("nombre") === null || localStorage.getItem("nombre") === "null"){
+        localStorage.setItem("nombre", prompt("Introduce un nombre", ""));
+        username = localStorage.getItem("nombre");
+        miH2.textContent = "Bienvenido " + username;
+        document.body.appendChild(miH2);
     }else{
         username = localStorage.getItem("nombre");
         miH2.textContent = "Bienvenido " + username;
