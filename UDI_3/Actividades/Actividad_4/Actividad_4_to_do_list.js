@@ -9,7 +9,7 @@
 
     prioridades.forEach(p => {
         let option = document.createElement("option");
-        option.value = p.toLowerCase();
+        option.value = p;
         option.textContent = p;
         select.appendChild(option);
     });
