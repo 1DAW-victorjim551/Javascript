@@ -1,4 +1,7 @@
 "use strict"
+
+// const { createElement } = require("react");
+
 {
     let boton1 = document.createElement("input");
     boton1.setAttribute("type", "button");
@@ -54,4 +57,27 @@
         .then(datosRecibidos => console.log(datosRecibidos))
     });
 
+    document.body.appendChild(document.createElement("br"));
+    document.body.appendChild(document.createElement("br"));
+
+    let url4 = "http://localhost:3000/members";
+    let postBtn = document.createElement("button");
+    postBtn.textContent = "POST - Json Server";
+    document.body.appendChild(postBtn);
+
+    postBtn.addEventListener("click", function (evento){
+            let myRequest4 = new Request(url4);
+            fetch(myRequest4, {
+            method : "POST",
+            body:JSON.stringify({
+            userId : 15,
+            title : "Titulo 3",
+            completed : false,
+            mensaje : "Esto es una prueba"
+        })
+    })
+    .then((response)=> response.json())
+    .then(console.log())
+
+    })
 }

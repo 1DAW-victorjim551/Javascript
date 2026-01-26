@@ -1,14 +1,24 @@
-[
- {
-    "userId": 1,
-    "id": 1,
-    "title": "Titulo 1",
-    "completed": false
-  },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "Titulo 2",
-    "completed": false
-  }
-]
+{
+  "members": [
+    {
+      "userId": 1,
+      "id": "1",
+      "title": "Titulo 1",
+      "completed": false,
+      "mensaje": "Esto es una prueba, ahora de PATCH"
+    },
+    {
+      "userId": 15,
+      "title": "Titulo 3",
+      "mensaje": "Esto es una prueba, ahora de PUT",
+      "id": "2"
+    },
+    {
+      "id": "d9d2",
+      "userId": 15,
+      "title": "Titulo 3",
+      "completed": false,
+      "mensaje": "Esto es una prueba"
+    }
+  ]
+}

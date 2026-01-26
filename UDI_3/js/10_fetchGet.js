@@ -52,4 +52,45 @@
                 document.body.appendChild(p);
         })
     }
+
+let url2 = "http://localhost:3000/members";
+
+    let boton3 = document.createElement("input");
+    boton3.setAttribute("type", "button");
+    boton3.setAttribute("value", "Btn3 - Get son-server");
+    document.body.appendChild(boton3);
+    let myValue2 = document.createElement("input");
+    myValue2.setAttribute("type", "number");
+    document.body.appendChild(myValue2);
+    boton3.onclick = function (evento) {
+        let url3 = url2 + "/" + myValue2.value;
+        console.log("URL2: 3 " + url3);
+        let myRequest3 = new Request(url3);
+        fetch(myRequest3)
+        .then(function (response){
+            if(response.ok){
+                return response.json();
+            }else {
+                throw new Error("ERROR: "  + error);
+            }
+        })
+        .then(function(myJson){
+            if(Array.isArray(myJson)){
+                console.log("es array");
+                myJson.forEach(json => {
+                      let myP = document.createElement("p");
+                    myP.textContent = json.id + " - " + json.title + " - " + json.completed;
+                    document.body.appendChild(myP)
+                });
+            }else {
+                console.log("es un objeto");
+                let myP = document.createElement("p");
+                    myP.textContent = myJson.id + " - " + myJson.title + " - " + myJson.completed;
+                    document.body.appendChild(myP)
+            }
+            console.log(myJson);
+        })
+    };
+
+    
 }
