@@ -1,0 +1,166 @@
+"use strict"
+{
+    const divButtons = document.querySelector("#idButtons");
+    const divContent = document.querySelector("#idContent");
+
+    let btnTask1 = document.createElement("input");
+    btnTask1.setAttribute("type", "button");
+    btnTask1.setAttribute("value", "LOAD IMAGES");
+    btnTask1.setAttribute("class", "btn btn-info m-2");
+    divButtons.appendChild(btnTask1);
+
+    let btnTask2 = document.createElement("input");
+    btnTask2.setAttribute("type", "button");
+    btnTask2.setAttribute("value", "ADD USER");
+    btnTask2.setAttribute("class", "btn btn-info m-2");
+    divButtons.appendChild(btnTask2);
+
+    let btnTask3 = document.createElement("input");
+    btnTask3.setAttribute("type", "button");
+    btnTask3.setAttribute("value", "MODIFY IMAGES");
+    btnTask3.setAttribute("class", "btn btn-info m-2");
+    divButtons.appendChild(btnTask3);
+
+    let btnTask4 = document.createElement("input");
+    btnTask4.setAttribute("type", "button");
+    btnTask4.setAttribute("value", "MODIFY NAME");
+    btnTask4.setAttribute("class", "btn btn-info m-2");
+    divButtons.appendChild(btnTask4);
+
+    let btnTask5 = document.createElement("input");
+    btnTask5.setAttribute("type", "button");
+    btnTask5.setAttribute("value", "DELETE PROFE");
+    btnTask5.setAttribute("class", "btn btn-info m-2");
+    divButtons.appendChild(btnTask5);
+
+    let btnTask6 = document.createElement("input");
+    btnTask6.setAttribute("type", "button");
+    btnTask6.setAttribute("value", "DELETE HERO");
+    btnTask6.setAttribute("class", "btn btn-info m-2");
+    divButtons.appendChild(btnTask6);
+
+    let btnClean = document.createElement("input");
+    btnClean.setAttribute("type", "button");
+    btnClean.setAttribute("value", "Clean DOM");
+    btnClean.setAttribute("class", "btn btn-danger m-2");
+    divButtons.appendChild(btnClean);
+
+    btnClean.onclick = function (e){
+        cleanScreen();
+    
+    };
+
+    let myRequest = new Request ("http://localhost:3000/usuarios");
+    let myRequest2 = new Request ("http://localhost:3000/heroes")
+   
+    btnTask1.addEventListener("click", function (event){
+        fetch(myRequest)
+        .then(function (response){
+            if(response.ok){
+                return response.json();
+            }else {
+                   let p = document.createElement("p");
+                    p.textContent = "Not implemented yet";
+                    p.style.setProperty("color", "red");
+                    divContent.appendChild(p);
+            }
+        })
+        .then(function(myJson){
+            myJson.forEach(function (image){
+                let img = document.createElement("img");
+                img.src = image.foto;
+                document.body.appendChild(img);
+                let br = document.createElement("br");
+                document.body.appendChild(br);
+            }) 
+        })
+       
+    });
+
+
+   
+
+    function cleanScreen () {
+        while (divContent.firstChild) {
+            divContent.removeChild(divContent.firstChild);
+        }
+    }
+
+    btnTask2.addEventListener("click", function (){
+       fetch(myRequest,{
+        method : "POST",
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body:JSON.stringify({
+        id : "4",
+        usuario  : "Victor",
+        email : "vjimmar0508@g.educaand.es",
+        foto : "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84d086920a3ecebb2d046df637"
+        })
+       })
+        .then(function (response){
+            if(response.ok){
+                return response.json();
+            }else {
+                   let p = document.createElement("p");
+                    p.textContent = "Not implemented yet";
+                    p.style.setProperty("color", "red");
+                    divContent.appendChild(p);
+            }
+        })
+        
+    });
+        
+btnTask3.addEventListener("click", function (e) {
+    fetch(myRequest)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                let p = document.createElement("p");
+                p.textContent = "Not implemented yet";
+                p.style.setProperty("color", "red");
+                divContent.appendChild(p);
+            }
+        })
+        .then(function (arrayJson) {
+            arrayJson.forEach(function (elem) {
+            fetch(myRequest.url + "/" + elem.id, {
+                method: "PATCH",
+                body: JSON.stringify({
+                    // foto:
+                })
+            });
+        });
+    });
+});
+
+
+btnTask4.addEventListener("click", function (e) {
+    let p = document.createElement("p");
+    p.textContent = "Not implemented yet";
+    p.style.setProperty("color", "red");
+    divContent.appendChild(p);
+})
+
+    btnTask5.addEventListener("click", function (event){
+        let p = document.createElement("p");
+    p.textContent = "Not implemented yet";
+    p.style.setProperty("color", "red");
+    divContent.appendChild(p);
+ 
+    });
+
+
+
+     btnTask6.addEventListener("click", function (event){
+       let p = document.createElement("p");
+    p.textContent = "Not implemented yet";
+    p.style.setProperty("color", "red");
+    divContent.appendChild(p);
+ 
+    });
+
+
+}
